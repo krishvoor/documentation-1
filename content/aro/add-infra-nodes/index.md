@@ -69,7 +69,7 @@ The chart used to default to infra nodes up to version `0.2.0` from and includin
 
    ```bash
    oc patch -n openshift-ingress-operator ingresscontroller default --type=merge  \
-      -p='{"spec":{"replicas":3,"nodePlacement":{"nodeSelector":{"matchLabels":{"node-role.kubernetes.io/infra":""}},"tolerations":[{"effect":"NoSchedule","key":"node-role.kubernetes.io/infra","operator":"Exists"}]}}}'
+      -p='{"spec":{"replicas":2,"nodePlacement":{"nodeSelector":{"matchLabels":{"node-role.kubernetes.io/infra":""}},"tolerations":[{"effect":"NoSchedule","key":"node-role.kubernetes.io/infra","operator":"Exists"}]}}}'
    ```
 
 1. Check the Ingress Controller Operator  is starting `pods` on the new `infra` nodes
